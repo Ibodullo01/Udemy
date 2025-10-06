@@ -43,3 +43,8 @@ class UpdateUserSerializer(serializers.ModelSerializer):
             'fullname': { 'help_text':'fullname kiriting','required': False, 'default': ''},
             'phone_number': { 'help_text':'phone_number kiriting','required': False, 'default': ''}
         }
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "fullname", "email", "phone_number", "image"]

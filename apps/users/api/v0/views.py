@@ -2,7 +2,7 @@
 from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import AllowAny
-from .serializer import RegisterSerializer, LoginSerializer, UpdateUserSerializer, LogoutSerializer
+from .serializer import RegisterSerializer, LoginSerializer, UpdateUserSerializer, LogoutSerializer, UserSerializer
 from ...models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -175,6 +175,16 @@ class UpdateProfileView(UpdateAPIView):
     def get_object(self):
         return self.request.user
 
+
+class UserProfileView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user  # tizimga kirgan foydalanuvchi
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
+
+profile = UserProfileView.as_view()
 log_out = LogoutView.as_view()
 login = LoginView.as_view()
 register = RegisterView.as_view()
