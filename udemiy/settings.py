@@ -19,7 +19,7 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "COMPONENT_SPLIT_REQUEST": True,
-
+s
 
 }
 
@@ -100,10 +100,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = True  # har qanday domen CORS orqali kira oladi
 CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'udemiy.urls'
 AUTH_USER_MODEL = 'users.User'
