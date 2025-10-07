@@ -1,0 +1,72 @@
+# Python cache fayllari
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Django fayllari
+*.log
+db.sqlite3
+media/
+static/
+staticfiles/
+
+# Migrations (ixtiyoriy — agar faqat dastlabki loyihani push qilayotgan bo‘lsang)
+# migrations/  <-- bu qatordan ehtiyot bo‘l, agar boshqalarga model kerak bo‘lsa, buni o‘chirma
+
+# Gunicorn socket va log fayllari
+gunicorn.sock
+gunicorn.log
+
+# Nginx log fayllari
+*.pid
+*.seed
+*.pid.lock
+
+# IDE va tizim fayllari
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Mac va Windows tizim fayllari
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python virtual environment fayllari
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Secret fayllar
+.env
+*.env
+secret.json
+
+# Node.js (agar front-end ham bo‘lsa)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Coverage va test fayllari
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# PyCharm, JetBrains va VS Code sozlamalari
+*.iml
+.vscode/
+.idea/

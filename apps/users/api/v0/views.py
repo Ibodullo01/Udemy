@@ -25,34 +25,11 @@ class RegisterView(CreateAPIView):
             "multipart/form-data": {
                 "type": "object",
                 "properties": {
-                    "fullname": {
-                        "type": "string",
-                        "description": "Foydalanuvchi to‘liq ismi",
-                        "example": "Ibodullo Fayzullayev"
-                    },
-                    "phone_number": {
-                        "type": "string",
-                        "description": "Telefon raqami (+998...)",
-                        "example": "+998901234567"
-                    },
-                    "email": {
-                        "type": "string",
-                        "format": "email",
-                        "description": "Foydalanuvchi email manzili",
-                        "example": "test@example.com"
-                    },
-                    "password": {
-                        "type": "string",
-                        "writeOnly": True,
-                        "description": "Parol (kamida 6 ta belgidan)",
-                        "example": "mySecret123"
-                    },
-                    "confirm_password": {
-                        "type": "string",
-                        "writeOnly": True,
-                        "description": "Parolni qayta kiriting",
-                        "example": "mySecret123"
-                    },
+                    "fullname": {"type": "string", "example": "Ibodullo Fayzullayev"},
+                    "phone_number": {"type": "string", "example": "+998901234567"},
+                    "email": {"type": "string", "example": "test@example.com"},
+                    "password": {"type": "string", "example": "mySecret123"},
+                    "confirm_password": {"type": "string", "example": "mySecret123"},
                 },
                 "required": ["fullname", "email", "password", "confirm_password"]
             }
@@ -63,11 +40,21 @@ class RegisterView(CreateAPIView):
         serializer = RegisterSerializer(data=request.data)
 
         if serializer.is_valid():
-            serializer.save()
+            user = serializer.save()
+
+            # ✅ Tokenlar yaratish
+            refresh = RefreshToken.for_user(user)
+            access = str(refresh.access_token)
+
             return Response(
-                {"message": "Foydalanuvchi muvaffaqiyatli ro‘yxatdan o‘tdi!"},
+                {
+                    "message": "Foydalanuvchi muvaffaqiyatli ro‘yxatdan o‘tdi!",
+                    "access": access,
+                    "refresh": str(refresh),
+                },
                 status=status.HTTP_201_CREATED
             )
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

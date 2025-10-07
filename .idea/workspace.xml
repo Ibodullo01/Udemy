@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b510dcb-063b-4d1c-b489-f54dc358269b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/apps/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/api/v0/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/api/v0/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/udemiy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/udemiy/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +43,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -98,6 +100,8 @@
       <workItem from="1759786448625" duration="39000" />
       <workItem from="1759786516883" duration="602000" />
       <workItem from="1759812275726" duration="2460000" />
+      <workItem from="1759820989360" duration="645000" />
+      <workItem from="1759855826175" duration="840000" />
     </task>
     <servers />
   </component>
