@@ -1,4 +1,4 @@
-
+from PIL.JpegImagePlugin import jpeg_factory
 from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.permissions import AllowAny
@@ -67,12 +67,12 @@ class LoginView(APIView):
                     "email": {
                         "type": "string",
                         "description": "Tizimga kirish uchun emailingizni kiriitng",
-                        "example": "example@gmail.com"
+                        "example": "i@gmail.com"
                     },
                     "password": {
                         "type": "string",
                         "description": "Tizimga kirish uchun passwordingizni kiriitng",
-                        "example": ""
+                        "example": "12"
                     }
 
 
@@ -176,3 +176,4 @@ log_out = LogoutView.as_view()
 login = LoginView.as_view()
 register = RegisterView.as_view()
 update_profile = UpdateProfileView.as_view()
+

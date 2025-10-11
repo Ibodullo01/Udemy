@@ -10,8 +10,19 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ['fullname', 'phone_number', 'email', 'image', 'password', 'confirm_password']
 
     def validate(self, data):
+        # Parollar mosligini tekshirish
         if data['password'] != data['confirm_password']:
             raise serializers.ValidationError({"password": "Parollar mos emas!"})
+
+        # Email takroriyligini tekshirish
+        if User.objects.filter(email=data['email']).exists():
+            raise serializers.ValidationError({"email": "Bu email bilan foydalanuvchi allaqachon ro‘yxatdan o‘tgan!"})
+
+        # Telefon raqam takroriyligini tekshirish
+        if User.objects.filter(phone_number=data['phone_number']).exists():
+            raise serializers.ValidationError(
+                {"phone_number": "Bu telefon raqami bilan foydalanuvchi allaqachon ro‘yxatdan o‘tgan!"})
+
         return data
 
     def create(self, validated_data):

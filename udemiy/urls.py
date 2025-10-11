@@ -29,7 +29,8 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # apps urls
 
-    path('api/users/', include('apps.users.api.v0.urls', namespace='users') ),
+    path('api/users/', include('apps.users.api.v0.urls', namespace='users_api') ),
+    path('api/courses/', include('apps.courses.api.v0.urls', namespace='courses_api')),
 ]
 
 if settings.DEBUG:
