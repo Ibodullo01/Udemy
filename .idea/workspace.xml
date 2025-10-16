@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b510dcb-063b-4d1c-b489-f54dc358269b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/core/exception_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/api/v0/serializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/api/v0/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/api/v0/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/migrations/0002_favorite.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/migrations/0003_purchasedcourse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/migrations/0004_coursecomment_text_lessoncomment_text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/courses/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0002_alter_user_options_alter_user_managers_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0003_user_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/courses/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/api/v0/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/api/v0/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/api/v0/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/api/v0/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/api/v0/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/api/v0/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udemiy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/udemiy/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udemiy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/udemiy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/courses/api/v0/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/api/v0/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/courses/api/v0/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/courses/api/v0/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,11 +119,36 @@
       <workItem from="1760038533058" duration="1201000" />
       <workItem from="1760065642707" duration="5636000" />
       <workItem from="1760129444022" duration="19682000" />
-      <workItem from="1760151494685" duration="6821000" />
+      <workItem from="1760151494685" duration="7733000" />
+      <workItem from="1760161968677" duration="758000" />
+      <workItem from="1760167737172" duration="2211000" />
+      <workItem from="1760191188288" duration="2126000" />
+      <workItem from="1760202653228" duration="1504000" />
+      <workItem from="1760251666623" duration="2690000" />
+      <workItem from="1760280349999" duration="976000" />
+      <workItem from="1760479495615" duration="583000" />
+      <workItem from="1760564014383" duration="278000" />
+      <workItem from="1760611992972" duration="1390000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/courses/api/v0/serializer.py</url>
+          <line>172</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/courses/api/v0/serializer.py</url>
+          <line>185</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

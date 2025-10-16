@@ -1,3 +1,4 @@
+from PIL.JpegImagePlugin import jpeg_factory
 from rest_framework import serializers
 from apps.courses.models import Course, Lesson, Cart, Favorite, PurchasedCourse, LessonComment, CourseComment
 
@@ -51,6 +52,7 @@ class LessonSerializer(serializers.ModelSerializer):
         ]
 
 class CourseListSerializer(serializers.ModelSerializer):
+    purchased_count = serializers.SerializerMethodField()
     class Meta:
         model = Course
         fields = [
@@ -68,7 +70,12 @@ class CourseListSerializer(serializers.ModelSerializer):
             'category',
             'lessons_count',
             'views',
+            'purchased_count',
         ]
+
+    def get_purchased_count(self, obj):
+        return obj.purchased_by.count()
+
 
 class CourseDetailSerializer(serializers.ModelSerializer):
     lessons = LessonSerializer(many=True, read_only=True)
@@ -163,10 +170,10 @@ class CartSerializer(serializers.ModelSerializer):
 
 
 class CardListSerializer(serializers.ModelSerializer):
-    course_title = serializers.CharField(source='course.title', read_only=True)
+    course = CourseSerializer(read_only=True)  # > Serverga shuni quyishim kerak
     class Meta:
         model = Cart
-        fields = ['id', 'course', 'course_title', 'created_at']
+        fields = ['id', 'course', 'created_at']
 
 
 
@@ -176,13 +183,10 @@ class FavoriteSerializer(serializers.ModelSerializer):
         fields = ['id', 'course']
 
 class FavoriteCourseSerializer(serializers.ModelSerializer):
-    title = serializers.CharField(source='course.title', read_only=True)
-    price = serializers.DecimalField(source='course.price', max_digits=8, decimal_places=2, read_only=True)
-    description = serializers.CharField(source='course.description', read_only=True)
-
+    course = CourseSerializer(read_only=True)  # > Servera shuni quyishim kerak
     class Meta:
         model = Favorite
-        fields = ['id', 'course', 'title', 'price', 'description', 'created_at']
+        fields = ['id', 'course',  'created_at']
 
 
 
@@ -255,16 +259,19 @@ class LessonCommentSerializer(serializers.ModelSerializer):
 class CourseCommentListSerializer(serializers.ModelSerializer):
     user_fullname = serializers.CharField(source='user.fullname', read_only=True)
     course_title = serializers.CharField(source='course.title', read_only=True)
+    user_image = serializers.CharField(source='user.image', read_only=True)
+
 
     class Meta:
         model = CourseComment
-        fields = ['id', 'text', 'user_fullname', 'course_title', 'created_at']
+        fields = ['id', 'text', 'user_fullname', 'user_image','course_title', 'created_at']
 
 
 class LessonCommentListSerializer(serializers.ModelSerializer):
     user_fullname = serializers.CharField(source='user.fullname', read_only=True)
     lesson_title = serializers.CharField(source='lesson.title', read_only=True)
+    user_image = serializers.CharField(source='user.image', read_only=True)
 
     class Meta:
         model = LessonComment
-        fields = ['id', 'text', 'user_fullname', 'lesson_title', 'created_at']
+        fields = ['id', 'text', 'user_fullname', 'user_image', 'lesson_title', 'created_at']

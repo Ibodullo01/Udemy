@@ -1,8 +1,8 @@
-from django.db import IntegrityError
+
 from rest_framework import generics, permissions, status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
 from apps.courses.models import Course, Lesson, Cart, Favorite, PurchasedCourse, CourseComment, LessonComment
@@ -16,7 +16,7 @@ class CourseCreateAPIView(generics.CreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     parser_classes = (MultiPartParser, FormParser)
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class CourseListAPIView(generics.ListAPIView):
     queryset = Course.objects.all()
@@ -28,7 +28,7 @@ class CourseListAPIView(generics.ListAPIView):
 class CourseDetailAPIView(generics.RetrieveAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseDetailSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     parser_classes = (MultiPartParser, FormParser)
     lookup_field = 'pk'
 
@@ -42,7 +42,7 @@ class CourseDetailAPIView(generics.RetrieveAPIView):
 class LessonCreateAPIView(generics.CreateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonCreateSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     parser_classes = (MultiPartParser, FormParser)
 
 
@@ -269,3 +269,4 @@ course_create = CourseCreateAPIView.as_view()
 course_list = CourseListAPIView.as_view()
 course_detail = CourseDetailAPIView.as_view()
 lesson_create = LessonCreateAPIView.as_view()
+

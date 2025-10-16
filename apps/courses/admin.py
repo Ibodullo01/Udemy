@@ -1,3 +1,4 @@
+from PIL.JpegImagePlugin import jpeg_factory
 from django.contrib import admin
 
 from apps.courses.models import Lesson, Course, LessonComment, CourseComment, Cart, PurchasedCourse
